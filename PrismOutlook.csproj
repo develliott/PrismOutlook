@@ -101,6 +101,10 @@
       <Project>{276A3C1F-46AA-426B-9227-3414993766C8}</Project>
       <Name>PrismOutlook.Modules.Mail</Name>
     </ProjectReference>
+    <ProjectReference Include="PrismOutlook.Core\PrismOutlook.Core.csproj">
+      <Project>{394d4baa-4176-48f0-aa15-ceedbf1438ec}</Project>
+      <Name>PrismOutlook.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
