@@ -2,6 +2,8 @@
 using Prism.Ioc;
 using Prism.Modularity;
 using System.Windows;
+using PrismOutlook.Modules.Calendar;
+using PrismOutlook.Modules.Contacts;
 using PrismOutlook.Modules.Mail;
 
 namespace PrismOutlook
@@ -24,6 +26,8 @@ namespace PrismOutlook
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<MailModule>();
+            moduleCatalog.AddModule<ContactsModule>();
+            moduleCatalog.AddModule<CalendarModule>();
         }
     }
 }

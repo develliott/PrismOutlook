@@ -94,9 +94,26 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Infragistics.WPF.OutlookBar">
+      <Version>19.2.90</Version>
+    </PackageReference>
+    <PackageReference Include="Infragistics.WPF.Ribbon">
+      <Version>19.2.90</Version>
+    </PackageReference>
+    <PackageReference Include="Infragistics.WPF.Themes.Office2013">
+      <Version>19.2.90</Version>
+    </PackageReference>
     <PackageReference Include="Prism.Unity" Version="7.2.0.1367" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Modules\PrismOutlook.Modules.Calendar\PrismOutlook.Modules.Calendar.csproj">
+      <Project>{B3430DCF-9147-4B23-ABC4-4C48DBADE536}</Project>
+      <Name>PrismOutlook.Modules.Calendar</Name>
+    </ProjectReference>
+    <ProjectReference Include="Modules\PrismOutlook.Modules.Contacts\PrismOutlook.Modules.Contacts.csproj">
+      <Project>{6B06FE93-A247-4CF4-A3E6-9CD265FFBFA0}</Project>
+      <Name>PrismOutlook.Modules.Contacts</Name>
+    </ProjectReference>
     <ProjectReference Include="Modules\PrismOutlook.Modules.Mail\PrismOutlook.Modules.Mail.csproj">
       <Project>{276A3C1F-46AA-426B-9227-3414993766C8}</Project>
       <Name>PrismOutlook.Modules.Mail</Name>
