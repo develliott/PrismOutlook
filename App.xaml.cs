@@ -3,6 +3,7 @@ using Prism.Ioc;
 using Prism.Modularity;
 using System.Windows;
 using Infragistics.Windows.OutlookBar;
+using Infragistics.Windows.Ribbon;
 using Prism.Regions;
 using PrismOutlook.Core.Regions;
 using PrismOutlook.Modules.Calendar;
@@ -36,6 +37,7 @@ namespace PrismOutlook
         {
             base.ConfigureRegionAdapterMappings(regionAdapterMappings);
             regionAdapterMappings.RegisterMapping(typeof(XamOutlookBar), Container.Resolve<XamOutlookBarRegionAdapter>());
+            regionAdapterMappings.RegisterMapping(typeof(XamRibbon), Container.Resolve<XamRibbonRegionAdapter>());
         }
     }
 }
