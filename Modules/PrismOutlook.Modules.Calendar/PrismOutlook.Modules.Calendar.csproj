@@ -85,6 +85,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Infragistics.WPF.OutlookBar">
+      <Version>19.2.90</Version>
+    </PackageReference>
     <PackageReference Include="Infragistics.WPF.Ribbon">
       <Version>19.2.90</Version>
     </PackageReference>
