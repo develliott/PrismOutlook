@@ -15,7 +15,7 @@
         </ig:RibbonWindowContentHost.Ribbon>
 
         <DockPanel LastChildFill="True">
-            <ig:XamOutlookBar  DockPanel.Dock="Left" Width="200" />
+            <ig:XamOutlookBar prism:RegionManager.RegionName="{x:Static core:RegionNames.OutlookGroupRegion}" DockPanel.Dock="Left" Width="200" />
             <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
         </DockPanel>
 
