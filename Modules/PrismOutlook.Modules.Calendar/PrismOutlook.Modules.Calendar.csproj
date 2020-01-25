@@ -78,7 +78,12 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\PrismOutlook.Core\PrismOutlook.Core.csproj">
+      <Project>{394D4BAA-4176-48F0-AA15-CEEDBF1438EC}</Project>
+      <Name>PrismOutlook.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Page Include="Views\ViewA.xaml">
       <SubType>Designer</SubType>

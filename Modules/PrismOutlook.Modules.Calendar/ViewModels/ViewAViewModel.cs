@@ -5,10 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PrismOutlook.Core;
 
 namespace PrismOutlook.Modules.Calendar.ViewModels
 {
-    public class ViewAViewModel : BindableBase
+    public class ViewAViewModel : ViewModelBase
     {
         private string _message;
         public string Message

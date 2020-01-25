@@ -6,7 +6,7 @@ using PrismOutlook.Core;
 
 namespace PrismOutlook.ViewModels
 {
-    public class MainWindowViewModel : BindableBase
+    public class MainWindowViewModel : ViewModelBase
     {
         private readonly IRegionManager _regionManager;
         private string _title = "Prism Application";
