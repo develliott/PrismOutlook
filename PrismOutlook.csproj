@@ -107,7 +107,7 @@
     <PackageReference Include="Infragistics.WPF.Themes.Office2013">
       <Version>19.2.90</Version>
     </PackageReference>
-    <PackageReference Include="Prism.Unity" Version="7.2.0.1367" />
+    <PackageReference Include="Prism.Unity" Version="7.2.0.1422" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Modules\PrismOutlook.Modules.Calendar\PrismOutlook.Modules.Calendar.csproj">
