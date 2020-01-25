@@ -11,7 +11,7 @@
              xmlns:ig="http://schemas.infragistics.com/xaml" 
              Header="Mail">
     <Grid>
-        <ig:XamDataTree ItemsSource="{Binding Items}">
+        <ig:XamDataTree x:Name="_dataTree" ItemsSource="{Binding Items}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="ActiveNodeChanged">
                     <prism:InvokeCommandAction Command="{Binding SelectedCommand}" TriggerParameterPath="NewActiveTreeNode.Data" />

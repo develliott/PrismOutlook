@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Infragistics.Windows.OutlookBar;
+using PrismOutlook.Business;
 using PrismOutlook.Core;
 
 namespace PrismOutlook.Modules.Mail.Menus
@@ -27,6 +28,18 @@ namespace PrismOutlook.Modules.Mail.Menus
             InitializeComponent();
         }
 
-        public string DefaultNavigationPath => "MailList";
+        public string DefaultNavigationPath
+        {
+            get
+            {
+                // Check if not null and type cast to NavigationItem
+                if (_dataTree.ActiveDataItem is NavigationItem item)
+                {
+                    return item.NavigationPath;
+                }
+
+                return "MailList";
+            }
+        }
     }
 }
