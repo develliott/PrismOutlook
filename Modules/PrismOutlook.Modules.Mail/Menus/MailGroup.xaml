@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PrismOutlook.Modules.Mail.Menus"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:igWpf="http://schemas.infragistics.com/xaml/wpf" 
@@ -11,6 +12,11 @@
              Header="Mail">
     <Grid>
         <ig:XamDataTree ItemsSource="{Binding Items}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="ActiveNodeChanged">
+                    <prism:InvokeCommandAction Command="{Binding SelectedCommand}" TriggerParameterPath="NewActiveTreeNode.Data" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <ig:XamDataTree.GlobalNodeLayouts>
                 <ig:NodeLayout Key="GlobalLayout" TargetTypeName="NavigationItem" DisplayMemberPath="Caption"></ig:NodeLayout>
             </ig:XamDataTree.GlobalNodeLayouts>

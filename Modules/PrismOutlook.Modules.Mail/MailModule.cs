@@ -20,7 +20,6 @@ namespace PrismOutlook.Modules.Mail
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-
             _regionManager.RegisterViewWithRegion(RegionNames.RibbonRegion, typeof(HomeTab));
 
             _regionManager.RegisterViewWithRegion(RegionNames.OutlookGroupRegion, typeof(MailGroup));
@@ -30,7 +29,7 @@ namespace PrismOutlook.Modules.Mail
         {
             ViewModelLocationProvider.Register<MailGroup, MailGroupViewModel>();
 
-            containerRegistry.RegisterForNavigation<MailList, MailGroupViewModel>();
+            containerRegistry.RegisterForNavigation<MailList, MailListViewModel>();
         }
     }
 }
