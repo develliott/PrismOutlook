@@ -8,5 +8,10 @@ namespace PrismOutlook.Business
         public string NavigationPath { get; set; }
 
         public ObservableCollection<NavigationItem> Items { get; set; }
+
+        public NavigationItem()
+        {
+            Items = new ObservableCollection<NavigationItem>();
+        }
     }
 }
