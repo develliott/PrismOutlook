@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 namespace PrismOutlook.Business
 {
-    class NavigationItem
+    public class NavigationItem
     {
+        public string Caption { get; set; }
+        public string NavigationPath { get; set; }
+
+        public ObservableCollection<NavigationItem> Items { get; set; }
     }
 }

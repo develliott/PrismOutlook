@@ -69,6 +69,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ViewModels\MailGroupViewModel.cs" />
     <Compile Include="ViewModels\MailListViewModel.cs" />
     <Compile Include="Views\MailList.xaml.cs">
       <DependentUpon>MailList.xaml</DependentUpon>

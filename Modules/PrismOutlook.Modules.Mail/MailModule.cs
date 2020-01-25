@@ -1,9 +1,11 @@
 ﻿using PrismOutlook.Modules.Mail.Views;
 using Prism.Ioc;
 using Prism.Modularity;
+using Prism.Mvvm;
 using Prism.Regions;
 using PrismOutlook.Core;
 using PrismOutlook.Modules.Mail.Menus;
+using PrismOutlook.Modules.Mail.ViewModels;
 
 namespace PrismOutlook.Modules.Mail
 {
@@ -26,7 +28,7 @@ namespace PrismOutlook.Modules.Mail
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            
+            ViewModelLocationProvider.Register<MailGroup, MailGroupViewModel>();
         }
     }
 }
