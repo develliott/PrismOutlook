@@ -6,7 +6,7 @@ using PrismOutlook.Core;
 
 namespace PrismOutlook.Modules.Mail.ViewModels
 {
-    public class MailGroupViewModel : BindableBase
+    public class MailGroupViewModel : ViewModelBase
     {
         private readonly IApplicationCommands _applicationCommands;
         private ObservableCollection<NavigationItem> _items;
