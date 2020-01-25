@@ -5,6 +5,7 @@ using System.Windows;
 using Infragistics.Windows.OutlookBar;
 using Infragistics.Windows.Ribbon;
 using Prism.Regions;
+using PrismOutlook.Core;
 using PrismOutlook.Core.Regions;
 using PrismOutlook.Modules.Calendar;
 using PrismOutlook.Modules.Contacts;
@@ -24,6 +25,7 @@ namespace PrismOutlook
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
