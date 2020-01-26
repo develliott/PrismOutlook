@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Prism.Ioc;
 using Prism.Regions;
 
@@ -90,13 +91,29 @@ namespace PrismOutlook.Core.Regions
 
         private bool ShouldKeepAlive(object oldView)
         {
-            // if oldView implements IRegionMemberLifetime 
-            //return false;
+            var regionLifetime = GetViewOrDataContextLifetime(oldView);
+            if (regionLifetime != null)
+            {
+                return regionLifetime.KeepAlive;
+            }
 
-            //otherwise
             return true;
         }
 
+        IRegionMemberLifetime GetViewOrDataContextLifetime(object view)
+        {
+            if (view is IRegionMemberLifetime regionLifeTime)
+            {
+                return regionLifeTime;
+            }
+
+            if (view is FrameworkElement frameworkElement)
+            {
+                return frameworkElement.DataContext as IRegionMemberLifetime;
+            }
+
+            return null;
+        }
         DependentViewInfo CreateDependentViewInfo( DependentViewAttribute attribute)
         {
             var info = new DependentViewInfo();
