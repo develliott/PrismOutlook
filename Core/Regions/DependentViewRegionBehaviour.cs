@@ -36,29 +36,35 @@ namespace PrismOutlook.Core.Regions
         private void ActiveViewsOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
-                foreach (var view in e.NewItems)
+                foreach (var newView in e.NewItems)
                 {
                     var dependentViews = new List<DependentViewInfo>();
 
 
                     // If the view has been added once ->
-                    if (_dependentViewCache.ContainsKey(view))
+                    if (_dependentViewCache.ContainsKey(newView))
                     {
                         // -> reuse the view
-                        dependentViews = _dependentViewCache[view];
+                        dependentViews = _dependentViewCache[newView];
                     }
                     else // Create the view
                     {
                         // Get the attributes
-                        var atts = GetCustomAttributes<DependentViewAttribute>(view.GetType());
+                        var atts = GetCustomAttributes<DependentViewAttribute>(newView.GetType());
 
                         foreach (var att in atts)
                         {
                             var info = CreateDependentViewInfo(att);
+
+                            if (info.View is ISupportDataContext infoDC && newView is ISupportDataContext viewDC)
+                            {
+                                infoDC.DataContext = viewDC.DataContext;
+                            }
+
                             dependentViews.Add(info);
                         }
 
-                        _dependentViewCache.Add(view, dependentViews);
+                        _dependentViewCache.Add(newView, dependentViews);
                     }
 
                     // Inject the views
