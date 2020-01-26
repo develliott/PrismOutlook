@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using Prism.Ioc;
 using Prism.Regions;
@@ -18,12 +16,12 @@ namespace PrismOutlook.Core.Regions
     // Views are not removed from regions, until explicitly removed.
     public class DependentViewRegionBehaviour : RegionBehavior
     {
-        private readonly IContainerExtension _container;
-
         // Region Behaviors need a unique key
         public const string BehaviourKey = "DependentViewRegionBehaviour";
+        private readonly IContainerExtension _container;
 
-        Dictionary<object, List<DependentViewInfo>> _dependentViewCache = new Dictionary<object, List<DependentViewInfo>>();
+        private readonly Dictionary<object, List<DependentViewInfo>> _dependentViewCache =
+            new Dictionary<object, List<DependentViewInfo>>();
 
         public DependentViewRegionBehaviour(IContainerExtension container)
         {
@@ -38,7 +36,6 @@ namespace PrismOutlook.Core.Regions
         private void ActiveViewsOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
-            {
                 foreach (var view in e.NewItems)
                 {
                     var dependentViews = new List<DependentViewInfo>();
@@ -62,18 +59,13 @@ namespace PrismOutlook.Core.Regions
                         }
 
                         _dependentViewCache.Add(view, dependentViews);
-
                     }
+
                     // Inject the views
                     dependentViews.ForEach(item => Region.RegionManager.Regions[item.Region].Add(item.View));
-
                 }
-
-            }
             else if (e.Action == NotifyCollectionChangedAction.Remove)
-            {
                 foreach (var oldView in e.OldItems)
-                {
                     if (_dependentViewCache.ContainsKey(oldView))
                     {
                         var dependentViews = _dependentViewCache[oldView];
@@ -81,40 +73,31 @@ namespace PrismOutlook.Core.Regions
 
                         // If permanently removed, removed from cache
                         if (!ShouldKeepAlive(oldView))
-                        {
                             _dependentViewCache.Remove(oldView);
-                        }
                     }
-                }
-            }
         }
 
         private bool ShouldKeepAlive(object oldView)
         {
             var regionLifetime = GetViewOrDataContextLifetime(oldView);
-            if (regionLifetime != null)
-            {
-                return regionLifetime.KeepAlive;
-            }
+            if (regionLifetime != null) return regionLifetime.KeepAlive;
 
             return true;
         }
 
-        IRegionMemberLifetime GetViewOrDataContextLifetime(object view)
+        private IRegionMemberLifetime GetViewOrDataContextLifetime(object view)
         {
-            if (view is IRegionMemberLifetime regionLifeTime)
-            {
-                return regionLifeTime;
-            }
+            if (view is IRegionMemberLifetime regionLifetime)
+                return regionLifetime;
+
 
             if (view is FrameworkElement frameworkElement)
-            {
                 return frameworkElement.DataContext as IRegionMemberLifetime;
-            }
 
             return null;
         }
-        DependentViewInfo CreateDependentViewInfo( DependentViewAttribute attribute)
+
+        private DependentViewInfo CreateDependentViewInfo(DependentViewAttribute attribute)
         {
             var info = new DependentViewInfo();
             info.Region = attribute.Region;
