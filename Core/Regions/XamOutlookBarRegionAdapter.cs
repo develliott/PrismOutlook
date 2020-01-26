@@ -14,6 +14,12 @@ namespace PrismOutlook.Core.Regions
         {
         }
 
+        // This can be used to attach a behaviour to only one Adapter.
+        // protected override void AttachBehaviors(IRegion region, XamOutlookBar regionTarget)
+        // {
+        //     base.AttachBehaviors(region, regionTarget);
+        // }
+
         protected override void Adapt(IRegion region, XamOutlookBar regionTarget)
         {
             region.Views.CollectionChanged += ((x, y) =>

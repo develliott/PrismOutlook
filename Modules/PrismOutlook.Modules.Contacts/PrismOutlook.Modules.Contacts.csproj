@@ -54,6 +54,9 @@
     <Compile Include="Menus\ContactsGroup.xaml.cs">
       <DependentUpon>ContactsGroup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Menus\HomeTab.xaml.cs">
+      <DependentUpon>HomeTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -89,6 +92,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Menus\ContactsGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menus\HomeTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
