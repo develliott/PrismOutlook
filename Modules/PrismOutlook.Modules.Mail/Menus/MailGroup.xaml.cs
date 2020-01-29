@@ -12,9 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Infragistics.Controls.Menus;
 using Infragistics.Windows.OutlookBar;
 using PrismOutlook.Business;
 using PrismOutlook.Core;
+using PrismOutlook.Modules.Mail.ViewModels;
 
 namespace PrismOutlook.Modules.Mail.Menus
 {
@@ -23,9 +25,19 @@ namespace PrismOutlook.Modules.Mail.Menus
     /// </summary>
     public partial class MailGroup : OutlookBarGroup, IOutlookBarGroup
     {
+
         public MailGroup()
         {
             InitializeComponent();
+
+            _dataTree.Loaded += DataTreeOnLoaded;
+        }
+
+        private void DataTreeOnLoaded(object sender, RoutedEventArgs e)
+        {
+            var parentNode = _dataTree.Nodes[0];
+            var nodeToSelect = parentNode.Nodes[0];
+            nodeToSelect.IsSelected = true;
         }
 
         public string DefaultNavigationPath
@@ -38,7 +50,7 @@ namespace PrismOutlook.Modules.Mail.Menus
                     return item.NavigationPath;
                 }
 
-                return "MailList?folder=Default";
+                return $"MailList?{FolderParameters.FolderKey}={FolderParameters.Inbox}";
             }
         }
     }
