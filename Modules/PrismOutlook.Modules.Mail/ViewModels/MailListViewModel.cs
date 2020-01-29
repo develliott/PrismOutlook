@@ -32,6 +32,14 @@ namespace PrismOutlook.Modules.Mail.ViewModels
             set => SetProperty(ref _messages, value);
         }
 
+        private MailMessage _selectedMessage;
+
+        public MailMessage SelectedMessage
+        {
+            get => _selectedMessage;
+            set => SetProperty(ref _selectedMessage, value);
+        }
+
         public MailListViewModel(IMailService mailService)
         {
             _mailService = mailService;

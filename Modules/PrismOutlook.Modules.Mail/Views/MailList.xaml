@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              xmlns:ig="http://schemas.infragistics.com/xaml/wpf"
+             xmlns:igPrim="http://schemas.infragistics.com/xaml/primitives"
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -11,26 +12,41 @@
         </Grid.ColumnDefinitions>
 
         <Grid Background="White" Margin="5,0,0,0">
-            <ig:XamDataGrid DataSource="{Binding Messages}">
+            <ig:XamDataGrid DataSource="{Binding Messages}" ActiveDataItem="{Binding SelectedMessage}">
                 <ig:XamDataGrid.FieldLayoutSettings>
-                    <ig:FieldLayoutSettings AutoGenerateFields="False"></ig:FieldLayoutSettings>
+                    <ig:FieldLayoutSettings AutoGenerateFields="False" />
                 </ig:XamDataGrid.FieldLayoutSettings>
                 <ig:XamDataGrid.FieldLayouts>
                     <ig:FieldLayout>
                         <ig:TextField Name="From" />
                         <ig:TextField Name="Subject" />
                         <ig:DateTimeField Name="DateSent" />
-
                     </ig:FieldLayout>
                 </ig:XamDataGrid.FieldLayouts>
             </ig:XamDataGrid>
         </Grid>
 
-        <Grid Grid.Column="1" MinWidth="250" Background="White" />
+        <Border Grid.Column="1" Margin="10,0,0,0" Background="White">
+            <StackPanel>
+                <TextBlock Text="{Binding SelectedMessage.From}" />
+                <TextBlock Text="{Binding SelectedMessage.To}" />
+                <TextBlock Text="{Binding SelectedMessage.CC}" />
+                <TextBlock Text="{Binding SelectedMessage.Subject}" />
+                <TextBlock Text="{Binding SelectedMessage.Body}" />
+            </StackPanel>
+        </Border>
 
-        <Border Grid.Column="1" Margin="5,0,0,0" Background="White" />
-        <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" Width="1" HorizontalAlignment="Left"
-                      Grid.RowSpan="100" />
+        <GridSplitter Grid.Column="1" VerticalAlignment="Stretch" Width="10" HorizontalAlignment="Left"
+                      Grid.RowSpan="100">
+            <GridSplitter.Template>
+                <ControlTemplate>
+                    <Grid Background="White">
+                        <Rectangle Width="1" Fill="#D4D4D4" igPrim:XamlHelper.SnapsToDevicePixels="True"
+                                   Margin="0,5,0,0" HorizontalAlignment="Center" />
+                    </Grid>
+                </ControlTemplate>
+            </GridSplitter.Template>
+        </GridSplitter>
 
     </Grid>
 </UserControl>
