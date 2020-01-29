@@ -59,5 +59,32 @@ namespace PrismOutlook.Modules.Mail.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deleted.
+        /// </summary>
+        internal static string Folder_Deleted {
+            get {
+                return ResourceManager.GetString("Folder_Deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inbox.
+        /// </summary>
+        internal static string Folder_Inbox {
+            get {
+                return ResourceManager.GetString("Folder_Inbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sent.
+        /// </summary>
+        internal static string Folder_Sent {
+            get {
+                return ResourceManager.GetString("Folder_Sent", resourceCulture);
+            }
+        }
     }
 }
