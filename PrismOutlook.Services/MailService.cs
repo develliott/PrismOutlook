@@ -32,7 +32,7 @@ namespace PrismOutlook.Services
             new MailMessage
             {
                 Id = 3,
-                From = "test1@example.com",
+                From = "test3@example.com",
                 To = new ObservableCollection<string>{"recipient1@example.com", "recipient2@example.com" },
                 Subject = "This is a test email 3",
                 Body = "This is the body of an email 3",
