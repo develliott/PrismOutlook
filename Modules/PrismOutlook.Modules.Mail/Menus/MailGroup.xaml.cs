@@ -38,7 +38,7 @@ namespace PrismOutlook.Modules.Mail.Menus
                     return item.NavigationPath;
                 }
 
-                return "MailList?id=Default";
+                return "MailList?folder=Default";
             }
         }
     }
