@@ -99,6 +99,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Infragistics.WPF.DataGrids">
+      <Version>19.2.90</Version>
+    </PackageReference>
     <PackageReference Include="Infragistics.WPF.OutlookBar">
       <Version>19.2.90</Version>
     </PackageReference>

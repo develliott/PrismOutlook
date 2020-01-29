@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using Prism.Regions;
+using Prism.Services.Dialogs;
 using PrismOutlook.Core;
 
 namespace PrismOutlook.Modules.Mail.ViewModels
@@ -17,18 +18,6 @@ namespace PrismOutlook.Modules.Mail.ViewModels
         {
             get => _title;
             set => SetProperty(ref _title, value);
-        }
-
-        private DelegateCommand _testCo;
-
-        public DelegateCommand TestCommand =>
-            _testCo ?? (_testCo = new DelegateCommand(ExecuteTestCommand));
-
-        void ExecuteTestCommand()
-        {
-            // TODO Delete
-            MessageBox.Show("Example message");
-
         }
 
         public MailListViewModel()
