@@ -94,6 +94,14 @@
       <Project>{394D4BAA-4176-48F0-AA15-CEEDBF1438EC}</Project>
       <Name>PrismOutlook.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\PrismOutlook.Services.Interfaces\PrismOutlook.Services.Interfaces.csproj">
+      <Project>{095b70f0-a5b7-42b0-843b-c78532aaaba3}</Project>
+      <Name>PrismOutlook.Services.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PrismOutlook.Services\PrismOutlook.Services.csproj">
+      <Project>{d5359ed3-cdc5-47e0-a2a4-c7e44849396d}</Project>
+      <Name>PrismOutlook.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Menus\HomeTab.xaml">

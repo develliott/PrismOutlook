@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PrismOutlook.Business\PrismOutlook.Business.csproj" />
+    <ProjectReference Include="..\PrismOutlook.Services.Interfaces\PrismOutlook.Services.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

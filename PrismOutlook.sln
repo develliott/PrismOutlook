@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismOutlook.Core", "PrismO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismOutlook.Business", "PrismOutlook.Business\PrismOutlook.Business.csproj", "{BD4384A1-A8B0-4C2E-AFDB-D41663E03FBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismOutlook.Services", "PrismOutlook.Services\PrismOutlook.Services.csproj", "{D5359ED3-CDC5-47E0-A2A4-C7E44849396D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismOutlook.Services.Interfaces", "PrismOutlook.Services.Interfaces\PrismOutlook.Services.Interfaces.csproj", "{095B70F0-A5B7-42B0-843B-C78532AAABA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,14 @@ Global
 		{BD4384A1-A8B0-4C2E-AFDB-D41663E03FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD4384A1-A8B0-4C2E-AFDB-D41663E03FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD4384A1-A8B0-4C2E-AFDB-D41663E03FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5359ED3-CDC5-47E0-A2A4-C7E44849396D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5359ED3-CDC5-47E0-A2A4-C7E44849396D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5359ED3-CDC5-47E0-A2A4-C7E44849396D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5359ED3-CDC5-47E0-A2A4-C7E44849396D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{095B70F0-A5B7-42B0-843B-C78532AAABA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{095B70F0-A5B7-42B0-843B-C78532AAABA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{095B70F0-A5B7-42B0-843B-C78532AAABA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{095B70F0-A5B7-42B0-843B-C78532AAABA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
