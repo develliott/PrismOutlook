@@ -6,7 +6,7 @@
                     xmlns:Fluent="urn:fluent-ribbon"
                     xmlns:core="clr-namespace:PrismOutlook.Core;assembly=PrismOutlook.Core"
                     xmlns:ig="http://schemas.infragistics.com/xaml/wpf"
-                    Title="{Binding Title}" Height="350" Width="525">
+                    Title="{Binding Title}" Height="720" Width="1080">
 
 
     <ig:RibbonWindowContentHost>

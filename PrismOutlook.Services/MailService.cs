@@ -22,7 +22,7 @@ namespace PrismOutlook.Services
             },
             new MailMessage
             {
-                Id = 1,
+                Id = 2,
                 From = "test2@example.com",
                 To = new ObservableCollection<string>{"recipient3@example.com", "recipient1@example.com" },
                 Subject = "This is a test email 2",
@@ -31,7 +31,7 @@ namespace PrismOutlook.Services
             },
             new MailMessage
             {
-                Id = 1,
+                Id = 3,
                 From = "test1@example.com",
                 To = new ObservableCollection<string>{"recipient1@example.com", "recipient2@example.com" },
                 Subject = "This is a test email 3",

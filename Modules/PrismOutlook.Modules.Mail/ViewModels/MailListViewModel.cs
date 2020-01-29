@@ -9,11 +9,13 @@ using Prism.Regions;
 using Prism.Services.Dialogs;
 using PrismOutlook.Business;
 using PrismOutlook.Core;
+using PrismOutlook.Services.Interfaces;
 
 namespace PrismOutlook.Modules.Mail.ViewModels
 {
     public class MailListViewModel : ViewModelBase
     {
+        private readonly IMailService _mailService;
         private string _title = "Default";
 
         public string Title
@@ -30,14 +32,16 @@ namespace PrismOutlook.Modules.Mail.ViewModels
             set => SetProperty(ref _messages, value);
         }
 
-        public MailListViewModel()
+        public MailListViewModel(IMailService mailService)
         {
-
+            _mailService = mailService;
         }
 
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             Title = navigationContext.Parameters.GetValue<string>("id");
+
+            Messages = new ObservableCollection<MailMessage>(_mailService.GetInboxItems());
         }
     }
 }
