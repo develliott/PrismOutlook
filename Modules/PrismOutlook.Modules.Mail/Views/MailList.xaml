@@ -13,6 +13,9 @@
 
         <Grid Background="White" Margin="5,0,0,0">
             <ig:XamDataGrid DataSource="{Binding Messages}" ActiveDataItem="{Binding SelectedMessage}">
+                <ig:XamDataGrid.FieldSettings>
+                    <ig:FieldSettings AllowEdit="False"></ig:FieldSettings>
+                </ig:XamDataGrid.FieldSettings>
                 <ig:XamDataGrid.FieldLayoutSettings>
                     <ig:FieldLayoutSettings AutoGenerateFields="False" />
                 </ig:XamDataGrid.FieldLayoutSettings>
