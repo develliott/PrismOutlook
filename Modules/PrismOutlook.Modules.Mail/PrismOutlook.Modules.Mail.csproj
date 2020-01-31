@@ -50,6 +50,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\MailAddressConverter.cs" />
     <Compile Include="MailModule.cs" />
     <Compile Include="Menus\HomeTab.xaml.cs">
       <DependentUpon>HomeTab.xaml</DependentUpon>
@@ -130,8 +131,17 @@
     <PackageReference Include="Infragistics.WPF.Ribbon">
       <Version>19.2.90</Version>
     </PackageReference>
+    <PackageReference Include="Infragistics.WPF.RichTextDocument.Rtf">
+      <Version>19.2.90</Version>
+    </PackageReference>
+    <PackageReference Include="Infragistics.WPF.RichTextEditor">
+      <Version>19.2.90</Version>
+    </PackageReference>
     <PackageReference Include="Prism.Wpf" Version="7.2.0.1422" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\unknown.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

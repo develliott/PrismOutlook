@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using PrismOutlook.Business;
+using PrismOutlook.Services.Data;
 using PrismOutlook.Services.Interfaces;
 
 namespace PrismOutlook.Services
@@ -17,7 +18,7 @@ namespace PrismOutlook.Services
                 From = "test1@example.com",
                 To = new ObservableCollection<string>{"recipient1@example.com", "recipient1@example.com" },
                 Subject = "This is a test email 1",
-                Body = "This is the body of an email 1",
+                Body = Resources.Letter1,
                 DateSent = DateTime.Now
             },
             new MailMessage
@@ -26,7 +27,7 @@ namespace PrismOutlook.Services
                 From = "test2@example.com",
                 To = new ObservableCollection<string>{"recipient3@example.com", "recipient1@example.com" },
                 Subject = "This is a test email 2",
-                Body = "This is the body of an email 2",
+                Body = Resources.Letter2,
                 DateSent = DateTime.Now.AddDays(-5)
             },
             new MailMessage
@@ -35,7 +36,7 @@ namespace PrismOutlook.Services
                 From = "test3@example.com",
                 To = new ObservableCollection<string>{"recipient1@example.com", "recipient2@example.com" },
                 Subject = "This is a test email 3",
-                Body = "This is the body of an email 3",
+                Body = Resources.Letter3,
                 DateSent = DateTime.Now.AddDays(-1)
             },
         };

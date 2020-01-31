@@ -37,7 +37,7 @@ namespace PrismOutlook.Business
 
         private ObservableCollection<string> _cc;
 
-        public ObservableCollection<string> CC
+        public ObservableCollection<string> Cc
         {
             get => _cc;
             set => SetProperty(ref _cc, value);
