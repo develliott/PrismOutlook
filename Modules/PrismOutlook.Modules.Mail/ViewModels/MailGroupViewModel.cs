@@ -40,11 +40,25 @@ namespace PrismOutlook.Modules.Mail.ViewModels
         {
             Items = new ObservableCollection<NavigationItem>();
 
-            var root = new NavigationItem{Caption = "Personal Folder", NavigationPath = $"MailList?{FolderParameters.FolderKey}=Default", IsExpanded = true};
-            root.Items.Add(new NavigationItem {Caption = Properties.Resources.Folder_Inbox, NavigationPath = GetNavigationPath(FolderParameters.Inbox) });
-            root.Items.Add(new NavigationItem {Caption = Properties.Resources.Folder_Sent, NavigationPath = GetNavigationPath(FolderParameters.Sent) });
-            root.Items.Add(new NavigationItem { Caption = Properties.Resources.Folder_Deleted, NavigationPath = GetNavigationPath(FolderParameters.Deleted) });
-            
+            var root = new NavigationItem
+            {
+                Caption = "Personal Folder", NavigationPath = $"MailList?{FolderParameters.FolderKey}=Default",
+                IsExpanded = true
+            };
+            root.Items.Add(new NavigationItem
+            {
+                Caption = Properties.Resources.Folder_Inbox, NavigationPath = GetNavigationPath(FolderParameters.Inbox)
+            });
+            root.Items.Add(new NavigationItem
+            {
+                Caption = Properties.Resources.Folder_Sent, NavigationPath = GetNavigationPath(FolderParameters.Sent)
+            });
+            root.Items.Add(new NavigationItem
+            {
+                Caption = Properties.Resources.Folder_Deleted,
+                NavigationPath = GetNavigationPath(FolderParameters.Deleted)
+            });
+
             Items.Add(root);
         }
 
