@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\MailAddressConverter.cs" />
+    <Compile Include="FolderParameters.cs" />
     <Compile Include="MailModule.cs" />
     <Compile Include="Menus\HomeTab.xaml.cs">
       <DependentUpon>HomeTab.xaml</DependentUpon>
